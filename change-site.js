@@ -12,14 +12,14 @@
       let el= this.el;
       console.log(data,el);
       let myVideo= document.querySelector('#my-video');
-      let myVideoJab= document.querySelector('#video-jab');
+      
       let mySky= document.querySelector('#my-sky');
       /* myVideo.components.material.material.map.image.pause();
       myVideo.components.material.material.map.image.currentTime= 0; */
 
       el.addEventListener("loaded",()=> {
         console.log("cargado");
-        myVideoJab.play();
+        
         
       })
       
@@ -36,4 +36,9 @@
     }
   
   })
+
+  document.addEventListener("DOMContentLoaded", function(event) {
+    let myVideoJab= document.querySelector('#video-jab');
+    myVideoJab.play();
+});
 
