@@ -39,6 +39,6 @@
 
   document.addEventListener("DOMContentLoaded", function(event) {
     let myVideoJab= document.querySelector('#video-jab');
-    myVideoJab.play();
+    myVideoJab.setAttribute('muted', false);
 });
 
