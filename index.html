@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="/aframe-master.js"></script>
+    <script src="/change-site.js"></script>
+    <video src="./assets/"></video>
+   
+
+</head>
+
+
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="vista-dos"src="./assets/counter2.jpg" alt="">
+            <video  id="video-jab" src="./assets/jab baja.mp4" autoplay loop="true" ></video>
+        </a-assets>
+        <a-camera>
+            <a-cursor   cursor="fuse: true; fuseTimeout: 1500" , material="color:white"></a-cursor>
+        </a-camera>
+        
+         <a-sky  id="my-sky" src="" rotation="0 0 0" visible="false" >
+            <a-circle  radius="0.2" rotation="-90 0 0" position=" -1.5 0 -2.5" clickable></a-circle>
+        </a-sky> 
+        <a-circle  radius="1" rotation="2 90 180" position=" -20 0 -1" clickable="true"></a-circle>
+
+        <a-videosphere id="my-video" src="#video-jab" rotation="0 -90 0" visible="true">
+        </a-videosphere>
+        
+
+      </a-scene>
+      
+</body>
+</html>
