@@ -1,11 +1,21 @@
-AFRAME.registerComponent('clickable',{
+
+  
+  AFRAME.registerComponent('clickable',{
 
     init:function () {
       let data= this.data;
       let el= this.el;
       console.log(data,el);
       let myVideo= document.querySelector('#my-video');
+      
       let mySky= document.querySelector('#my-sky');
+
+      el.addEventListener("loaded",()=> {
+        console.log("cargado");
+        
+        
+      })
+      
   
       el.addEventListener("click", ()=> {
         console.log('clickado');
@@ -22,6 +32,6 @@ AFRAME.registerComponent('clickable',{
 
   document.addEventListener("DOMContentLoaded", function(event) {
     let myVideoJab= document.querySelector('#video-jab');
-    //myVideoJab.setAttribute('muted', false);
+    
 });
 
