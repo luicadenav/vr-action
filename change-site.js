@@ -6,27 +6,29 @@ AFRAME.registerComponent('clickable',{
       console.log(data,el);
       let myVideo= document.querySelector('#my-video');
       let mySky= document.querySelector('#my-sky');
+      let myHotspot= document.querySelector('#hotspot');
 
-      el.addEventListener("loaded",()=> {
-        console.log("cargado");
-      })
-      
-  
       el.addEventListener("click", ()=> {
+
         console.log('clickado');
-        myVideo.setAttribute('visible','false');
-        myVideo.components.material.material.map.image.pause();
-        myVideo.components.material.material.map.image.currentTime= 0;
-        mySky.setAttribute('visible','true');
-        mySky.setAttribute('src', '#vista-dos');
-        mySky.setAttribute('rotation', '0 180 0');
+        if (!myVideo.getAttribute("visible")) {
+          myVideo.setAttribute('visible','true');
+          myVideo.components.material.material.map.image.play();
+          myVideo.components.material.material.map.image.currentTime= 0;
+          mySky.setAttribute('visible','false');
+          myHotspot.setAttribute('visible', 'true');
+
+        } else {
+          myVideo.setAttribute('visible','false');
+          myVideo.components.material.material.map.image.pause();
+          myVideo.components.material.material.map.image.currentTime= 0;
+          mySky.setAttribute('visible','true');
+          //myHotspot.setAttribute('visible', 'true');
+        }
       })
     }
+
+    
   
   })
-
-  document.addEventListener("DOMContentLoaded", function(event) {
-    
-    
-  });
 
